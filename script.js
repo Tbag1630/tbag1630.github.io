@@ -1,62 +1,83 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+footer {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
 
-    // Project card hover effect
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.05)';
-            card.style.transition = 'transform 0.3s ease';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
-        });
-    });
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
 
-    // Form submission
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Here you would typically handle the form submission
-        alert('Thank you for your message! I will get back to you soon.');
-        form.reset();
-    });
+    .nav-links li {
+        opacity: 0;
+    }
 
-    // Dynamically update years of experience
-    const currentYear = new Date().getFullYear();
-    const yearsSincePhD = currentYear - 2018; // Assuming PhD was completed in 2018
-    const heroSubtitle = document.querySelector('.hero h2');
-    heroSubtitle.textContent += ` | ${yearsSincePhD}+ Years Experience`;
+    .burger {
+        display: block;
+    }
 
-    // Add a simple animation to reveal skills
-    const skillCategories = document.querySelectorAll('.skill-category');
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    .nav-active {
+        transform: translateX(0%);
+    }
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    .timeline::after {
+        left: 31px;
+    }
 
-    skillCategories.forEach(category => {
-        category.style.opacity = 0;
-        category.style.transform = 'translateY(20px)';
-        category.style.transition = 'opacity 0.5s, transform 0.5s';
-        observer.observe(category);
-    });
-});
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .timeline-item::after {
+        left: 15px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
