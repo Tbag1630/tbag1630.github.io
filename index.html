@@ -4,65 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linus Wakochwe - AI & Coding Expert</title>
-    <style>
-        /* CSS styles will be added here */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .section {
-            background-color: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .project {
-            margin-bottom: 20px;
-        }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .skill-tag {
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9em;
-        }
-        .contact-info {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Linus Wakochwe</h1>
-        <p>Expert in Coding & AI Training</p>
+        <nav>
+            <div class="logo">LW</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Linus Wakochwe</h1>
+            <p>Expert in Coding & AI Training</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
     </header>
 
     <main>
@@ -94,38 +62,46 @@
 
         <section id="projects" class="section">
             <h2>Featured Projects</h2>
-            <div class="project">
-                <h3>AI-Powered Chatbot for Safaricom</h3>
-                <p>Developed a conversational AI chatbot for Safaricom's customer service operations, enhancing user interactions and support efficiency.</p>
-                <p><strong>Technologies Used:</strong> Python, TensorFlow, NLTK</p>
-            </div>
-            <div class="project">
-                <h3>Predictive Analytics Platform for Equity Bank</h3>
-                <p>Created a predictive analytics platform for Equity Bank to forecast customer behavior and streamline financial operations.</p>
-                <p><strong>Technologies Used:</strong> Python, Scikit-Learn, Pandas</p>
-            </div>
-            <div class="project">
-                <h3>Image Recognition System for Jumia</h3>
-                <p>Implemented an image recognition system for Jumia to automate product categorization and enhance search functionalities.</p>
-                <p><strong>Technologies Used:</strong> PyTorch, OpenCV, CNN</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>AI-Powered Chatbot for Safaricom</h3>
+                    <p>Developed a conversational AI chatbot for Safaricom's customer service operations, enhancing user interactions and support efficiency.</p>
+                    <p><strong>Technologies:</strong> Python, TensorFlow, NLTK</p>
+                </div>
+                <div class="project-card">
+                    <h3>Predictive Analytics Platform for Equity Bank</h3>
+                    <p>Created a predictive analytics platform for Equity Bank to forecast customer behavior and streamline financial operations.</p>
+                    <p><strong>Technologies:</strong> Python, Scikit-Learn, Pandas</p>
+                </div>
+                <div class="project-card">
+                    <h3>Image Recognition System for Jumia</h3>
+                    <p>Implemented an image recognition system for Jumia to automate product categorization and enhance search functionalities.</p>
+                    <p><strong>Technologies:</strong> PyTorch, OpenCV, CNN</p>
+                </div>
             </div>
         </section>
 
         <section id="experience" class="section">
             <h2>Experience</h2>
-            <div>
-                <h3>AI Specialist at Twiga Foods</h3>
-                <ul>
-                    <li>Developed and optimized AI models for supply chain management and predictive analytics.</li>
-                    <li>Collaborated with teams to integrate AI solutions into operational systems, improving logistics and efficiency.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Software Engineer at Cellulant</h3>
-                <ul>
-                    <li>Engineered software solutions and contributed to the development of AI-driven applications for financial services.</li>
-                    <li>Conducted data analysis and model evaluation to ensure high performance and reliability.</li>
-                </ul>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI Specialist at Twiga Foods</h3>
+                        <ul>
+                            <li>Developed and optimized AI models for supply chain management and predictive analytics.</li>
+                            <li>Collaborated with teams to integrate AI solutions into operational systems, improving logistics and efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer at Cellulant</h3>
+                        <ul>
+                            <li>Engineered software solutions and contributed to the development of AI-driven applications for financial services.</li>
+                            <li>Conducted data analysis and model evaluation to ensure high performance and reliability.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -139,52 +115,45 @@
 
         <section id="why-choose-me" class="section">
             <h2>Why Choose Me?</h2>
-            <ul>
-                <li><strong>Innovative Solutions:</strong> I provide creative and effective AI solutions tailored to meet specific business needs.</li>
-                <li><strong>Results-Driven:</strong> My focus is on delivering tangible results and exceeding client expectations.</li>
-                <li><strong>Collaborative Approach:</strong> I thrive in team settings and prioritize clear communication and collaboration.</li>
-            </ul>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovative Solutions</h3>
+                    <p>I provide creative and effective AI solutions tailored to meet specific business needs.</p>
+                </div>
+                <div class="reason-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Results-Driven</h3>
+                    <p>My focus is on delivering tangible results and exceeding client expectations.</p>
+                </div>
+                <div class="reason-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborative Approach</h3>
+                    <p>I thrive in team settings and prioritize clear communication and collaboration.</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="section">
             <h2>Get in Touch</h2>
             <div class="contact-info">
-                <p>Email: linus.wakochwe@example.com</p>
-                <p>LinkedIn: [LinkedIn Profile URL]</p>
-                <p>GitHub: [GitHub Profile URL]</p>
+                <p><i class="fas fa-envelope"></i> Email: linus.wakochwe@example.com</p>
+                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="#" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fab fa-github"></i> GitHub: <a href="#" target="_blank">GitHub Profile</a></p>
             </div>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>Let's build the future of AI together.</p>
+        <p>© 2024 Linus Wakochwe. Let's build the future of AI together.</p>
     </footer>
 
-    <script>
-        // JavaScript for interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Add a simple animation to skill tags
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach(tag => {
-                tag.addEventListener('mouseover', () => {
-                    tag.style.transform = 'scale(1.1)';
-                    tag.style.transition = 'transform 0.3s ease';
-                });
-                tag.addEventListener('mouseout', () => {
-                    tag.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
