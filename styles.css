@@ -8,6 +8,16 @@
     --css-color: #264de4;
     --js-color: #f0db4f;
     --cpp-color: #00599c;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+.dark-mode {
+    --primary-color: #4aa3df;
+    --secondary-color: #34495e;
+    --text-color: #f4f4f4;
+    --background-color: #2c3e50;
+    --card-background: #34495e;
 }
 
 * {
@@ -21,6 +31,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -31,6 +42,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 nav {
@@ -122,6 +134,7 @@ main {
 .tag.cpp { background-color: var(--cpp-color); }
 
 .cta-button {
+    display: inline-block;
     padding: 0.8rem 2rem;
     background-color: #ffffff;
     color: var(--secondary-color);
@@ -151,6 +164,14 @@ main {
 
 .section {
     padding: 4rem 5%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
@@ -190,6 +211,12 @@ main {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .skill-category h3 {
@@ -221,11 +248,12 @@ main {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
@@ -241,6 +269,21 @@ main {
 
 .project-card p {
     padding: 0 1rem 1rem;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    background-color: var(--secondary-color);
 }
 
 .project-card.html-css { border-top: 5px solid var(--html-color); }
@@ -312,6 +355,13 @@ main {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 #contact-form button {
@@ -325,7 +375,18 @@ main {
 }
 
 #contact-form button:hover {
-    background-color: #2980b9;
+    background-color: var(--secondary-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+input.error,
+textarea.error {
+    border-color: var(--error-color);
 }
 
 footer {
@@ -334,6 +395,49 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--primary-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -373,6 +477,24 @@ footer {
     .profile-photo {
         width: 200px;
         height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 2rem 5%;
+    }
+
+    .skills-container,
+    .projects-grid,
+    .code-samples-container {
+        grid-template-columns: 1fr;
     }
 }
 
