@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
                 <li><a href="#code-samples">Code Samples</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="burger">
+            <div class="burger" aria-label="Toggle menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -103,24 +105,27 @@
         <section id="projects" class="section">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card html-css">
+                <article class="project-card html-css">
                     <img src="safaricom-project.jpg" alt="Safaricom Website Redesign">
                     <h3>Safaricom Website Redesign</h3>
                     <p>Redesigned Safaricom's website with a focus on user experience and responsive design.</p>
                     <p><strong>Technologies:</strong> HTML5, CSS3, Sass</p>
-                </div>
-                <div class="project-card js">
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+                <article class="project-card js">
                     <img src="equity-project.jpg" alt="Equity Bank Dashboard">
                     <h3>Equity Bank Customer Dashboard</h3>
                     <p>Developed an interactive dashboard for Equity Bank customers to manage their accounts and investments.</p>
                     <p><strong>Technologies:</strong> JavaScript, React.js, Node.js</p>
-                </div>
-                <div class="project-card cpp">
+                    <a href="#" class="project-link">View Project</a>
+                </article>
+                <article class="project-card cpp">
                     <img src="jumia-project.jpg" alt="Jumia Inventory System">
                     <h3>Jumia Inventory Management System</h3>
                     <p>Built a high-performance inventory management system for Jumia to handle millions of products efficiently.</p>
                     <p><strong>Technologies:</strong> C++, SQL</p>
-                </div>
+                    <a href="#" class="project-link">View Project</a>
+                </article>
             </div>
         </section>
 
@@ -228,8 +233,8 @@ std::vector&lt;int&gt; KMPSearch(const std::string& pattern, const std::string& 
             <div class="contact-container">
                 <div class="contact-info">
                     <p><i class="fas fa-envelope"></i> linus.wakochwe@example.com</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="#" target="_blank">LinkedIn Profile</a></p>
-                    <p><i class="fab fa-github"></i> <a href="#" target="_blank">GitHub Profile</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+                    <p><i class="fab fa-github"></i> <a href="#" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
                 </div>
                 <form id="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -242,7 +247,7 @@ std::vector&lt;int&gt; KMPSearch(const std::string& pattern, const std::string& 
     </main>
 
     <footer>
-        <p>© 2024 Linus Wakochwe. Crafting digital experiences with HTML, CSS, JavaScript, and C++.</p>
+        <p>&copy; 2024 Linus Wakochwe. Crafting digital experiences with HTML, CSS, JavaScript, and C++.</p>
     </footer>
 
     <script src="script.js"></script>
